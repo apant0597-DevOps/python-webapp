@@ -1,8 +1,8 @@
 # start by pulling the python image
-FROM python:3.8-alpine
+FROM python:3.12.1-alpine
 
 # copy every content from the local file to the image
-COPY pythonApp/* /app
+COPY pythonApp/* /app/
 
 # switch working directory
 WORKDIR /app
@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 # configure the container to run in an executed manner
 ENTRYPOINT [ "python" ]
 
-CMD ["view.py" ]
+CMD ["app.py" ]
